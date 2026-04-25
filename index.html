@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民以食为天 - 菜单</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-teal: #2c7a7b; /* 深青色 */
+            --light-teal: #e6fffa;   /* 浅青背景 */
+            --border-color: #4fd1c5; /* 边框色 */
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #f0fff4;
+            color: #2d3748;
+            padding: 15px; /* 稍微缩小边距，更适合手机 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-teal);
+            border-bottom: 3px solid var(--primary-teal);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* --- 核心修改：横向滚动容器 --- */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto; /* 允许横向滚动 */
+            -webkit-overflow-scrolling: touch; /* 让手机滑动更丝滑 */
+            border: 1px solid var(--border-color); /* 给滚动区域加个边框 */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 600px; /* 关键：强制表格保持宽度以触发滚动 */
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 10px;
+            text-align: left;
+            white-space: nowrap; /* 防止文字在窄屏幕下强制换行 */
+        }
+
+        th {
+            background-color: var(--light-teal);
+            color: var(--primary-teal);
+            width: 100px; /* 固定表头宽度 */
+            font-weight: bold;
+            position: sticky; /* 可选：滑动时固定第一列 */
+            left: 0;
+            z-index: 1;
+        }
+
+        .note {
+            color: #e53e3e;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .staff-section {
+            border-top: 2px dashed var(--border-color);
+            padding-top: 20px;
+        }
+
+        .staff-section h2 {
+            font-size: 1.1em;
+            color: var(--primary-teal);
+            margin-bottom: 10px;
+        }
+
+        .staff-item {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .label {
+            font-weight: bold;
+            width: 90px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>组名：民以食为天</h1>
+
+    <!-- 包裹层开始 -->
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>主食：</th>
+                <td>鸡饭 （要谈）(RM5)</td>
+                <td>椰浆饭 (RM3)</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>小吃：</th>
+                <td>牛油饼一包 (RM2)</td>
+                <td>ocoo egg (可能）(RM2.5)</td>
+                <td>地瓜球 (RM3)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>饮料：</th>
+                <td>sprite + ribena (RM3)</td>
+                <td>coca cola + sprite (RM3)</td>
+                <td>-</td>
+                <td>-</td> 
+            </tr>
+            <tr>
+                <th>其他：</th>
+                <td>盲袋 (RM4)</td>
+                <td>龙珠 (RM3)</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>套餐：</th>
+                <td>set A (鸡饭+水) (RM7)</td>
+                <td>set B (椰浆饭+水) (RM5)</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </table>
+    </div>
+    <!-- 包裹层结束 -->
+
+    <p class="note">*超过RM10就可以免费获得一个盲袋或龙珠（向左或右滑即可观看更多菜单）</p>
+
+    <div class="staff-section">
+        <h2>负责人：</h2>
+        <div class="staff-item"><span class="label">煮食物 🍳：</span>苏逸峰，蔡伽堡</div>
+        <div class="staff-item"><span class="label">算钱：</span>黄微绮，雪晴</div>
+        <div class="staff-item"><span class="label">水和甜品：</span>佳惠</div>
+        <div class="staff-item"><span class="label">其它：</span>olivia</div>
+    </div>
+</div>
+
+</body>
+</html>
